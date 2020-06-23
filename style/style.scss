@@ -23,15 +23,25 @@ body {
     margin-top: 3em;
     width: 50%;
     // transform: rotateZ(10deg);
+    opacity: 0;
     z-index: -3;
+    animation: image-loading 2s 6s ease-in-out forwards;
 }
 #my-img {
     position: absolute;
+    opacity: 0;
     width: 23%;
     top: 10%;
     margin-left: 72%;
-    z-index: 5;
+    z-index: 10;
     filter: drop-shadow( 7px 3px 0px rgba(0, 0, 0, 0.1));
+    animation: image-loading 2s 6s ease-in-out forwards;
+}
+
+@keyframes image-loading {
+    to {
+        opacity: 1;
+    }
 }
 
 .myname{
