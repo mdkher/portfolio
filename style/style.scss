@@ -6,94 +6,80 @@
 
 body {
     font-family: 'Montserrat', sans-serif;
-    
 }
 
 .container{
     width: 100%;
     height: 100vh;
-    max-width: 100%;
-    max-height: 100vh;
-    position: fixed;
-    background-color: rgba(#C8CFE0, .38);
+    opacity: 0;
+    position: relative;
+    padding: 0.1em 0.1em;
+    background-color: rgba(200, 207, 224, 0.38);
+    overflow: hidden;
+    animation: fade-in 2s 4.5s ease-in-out forwards;
 }
 
-#img-bg {
-    margin-left: 62%;
-    margin-top: 3em;
-    width: 50%;
-    // transform: rotateZ(10deg);
-    opacity: 0;
-    z-index: -3;
-    animation: image-loading 2s 6s ease-in-out forwards;
-}
-#my-img {
-    position: absolute;
-    opacity: 0;
-    width: 23%;
-    top: 10%;
-    margin-left: 72%;
-    z-index: 10;
-    filter: drop-shadow( 7px 3px 0px rgba(0, 0, 0, 0.1));
-    animation: image-loading 2s 6s ease-in-out forwards;
-}
-
-@keyframes image-loading {
+@keyframes fade-in {
     to {
         opacity: 1;
     }
 }
 
-.myname{
-    opacity: 0;
-    color: rgb(0, 0, 0);
-    // font-size: 21em;
-    margin: 0%;
-    padding: 0%;
+#main-page-name {
+    font-size: 20em;
+    color: #707070;
+    top: -22%;
     position: absolute;
-    z-index: -6;
-    // transform: translateY(-140px) translateX(15px);
-    animation: fade-in-name 2s 6s ease-in-out forwards;
+    z-index: -1;
+    opacity: 0.3;
 }
 
-#main-page {
-    opacity: 0;
-    animation: fade-in 2s 4.4s ease-in-out forwards;
+#main-page-description {
+    font-size: 2.1em;
+    color: #707070;
+    top: 84%;
+    left: 2.2%;
+    position: absolute;
+    z-index: -1;
+    opacity: 0.4;
 }
 
-@keyframes fade-in {
-    to{
-        opacity: 1;
-    }
+#img-bg {
+    top: 7%;
+    left: 63%;
+    width: 50%;
+    z-index: 0;
+    position: absolute;
 }
 
-@keyframes fade-in-name {
-    to{
-        opacity: 0.07;
-        transform: translateY(-140px) translateX(15px);
-        font-size: 21em;
-        color: #707070;
-    }
+#my-img {
+    top: 10%;
+    left: 73%;
+    width: 23%;
+    z-index: 1;
+    position: absolute;
+    filter: drop-shadow(7px 3px 0px rgba(0, 0, 0, 0.1));
+}
+
+.blank-space{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 10;
 }
 
 #landing-page{
     height: 100vh;
     width: 100%;
-    animation: fade-out 1s 4.1s ease-in-out forwards;
+    animation: fade-out 0.4s 4.1s ease-in-out forwards;
 }
 svg{
-    display: block;
-    position: absolute;
     top: 50%;
     left: 50%;
+    display: block;
+    position: absolute;
     transform: translate(-50%, -50%);
-    #Rectangle_3{
-        opacity: 1;
-        // transform: scaleX(0.6);
-        background-color: blue;
-    }
-    z-index: -10;
-    
+    z-index: -10; 
 }
 
 @keyframes fade-out{
@@ -110,9 +96,7 @@ svg{
     background-color: #707070;
     top: 342px;
     left: 115px;
-    // transform: translateY(-50%);
     border-radius: 40%;
-    // transform: scaleX(25);
     transform-origin: left;
     animation: loading 4s ease-in-out forwards;
     z-index: -10;
