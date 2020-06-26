@@ -19,8 +19,8 @@ body {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
-  -webkit-animation: fade-in 2s 3s ease-in-out forwards;
-          animation: fade-in 2s 3s ease-in-out forwards;
+  -webkit-animation: fade-in 1s 3s ease-in-out forwards;
+          animation: fade-in 1s 3s ease-in-out forwards;
 }
 
 .container {
@@ -46,22 +46,65 @@ body {
 }
 
 #main-page-name {
-  font-size: 21.5vw;
-  color: #707070;
-  top: -22%;
   position: absolute;
-  z-index: -1;
-  opacity: 0.15;
+  right: 45vw;
+  text-align: left;
+  font-size: 20vh;
+  opacity: 0;
+  color: black;
+  -webkit-animation: nameFadeIn 1s 2.7s ease forwards;
+          animation: nameFadeIn 1s 2.7s ease forwards;
+}
+
+@-webkit-keyframes nameFadeIn {
+  to {
+    opacity: 0.5;
+    right: 55vw;
+  }
+}
+
+@keyframes nameFadeIn {
+  to {
+    opacity: 0.5;
+    right: 55vw;
+  }
 }
 
 #main-page-description {
   font-size: 2.25vw;
-  color: #707070;
-  top: 84%;
-  left: 2.2%;
+  color: black;
+  top: 50vh;
+  left: 4.4vw;
   position: absolute;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 1;
+}
+
+#main-page-description li {
+  list-style: none;
+  margin: 1em 0em;
+  opacity: 0;
+  color: black;
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-animation: listFadeIn 1s 3.7s ease-in-out forwards;
+          animation: listFadeIn 1s 3.7s ease-in-out forwards;
+}
+
+@-webkit-keyframes listFadeIn {
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
+}
+
+@keyframes listFadeIn {
+  to {
+    opacity: 0.5;
+    -webkit-transform: translateY(0px);
+            transform: translateY(0px);
+  }
 }
 
 #img-bg {
@@ -143,15 +186,43 @@ object {
   height: 100vh;
   width: 100%;
   scroll-snap-align: center;
+  background: linear-gradient(-45deg, #ee765246, #e73c7e46, #23a6d546, #23d5ab46);
+  background-size: 400% 400%;
+  -webkit-animation: gradient 15s ease infinite;
+          animation: gradient 15s ease infinite;
+}
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .about-me h1 {
   text-transform: uppercase;
   position: absolute;
   top: 5%;
-  color: #707070;
+  color: #6b6b6b;
   font-size: 25vh;
-  opacity: 0.1;
+  opacity: 0.5;
   left: 5%;
 }
 
@@ -276,8 +347,9 @@ object {
   width: 100%;
   position: fixed;
   z-index: 5;
-  -webkit-animation: fade-out 1s 2.5s ease-in-out forwards;
-          animation: fade-out 1s 2.5s ease-in-out forwards;
+  background-color: black;
+  -webkit-animation: fade-out 0.2s 3s ease-out forwards;
+          animation: fade-out 0.2s 3s ease-out forwards;
 }
 
 @-webkit-keyframes fade-out {
@@ -296,40 +368,116 @@ object {
   }
 }
 
-.shape {
-  width: 0%;
-  height: 2.4em;
+.flashing-circle {
   position: absolute;
-  background-color: #707070;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  -webkit-animation: loading 2.5s ease-in-out forwards;
-          animation: loading 2.5s ease-in-out forwards;
-  z-index: 10;
+  top: 3vh;
+  left: 3vw;
+  height: 20vh;
+  width: 20vh;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 1;
+  font-size: x-large;
+  -webkit-animation: circle-flash 1.5s ease-in-out infinite;
+          animation: circle-flash 1.5s ease-in-out infinite;
 }
 
-@-webkit-keyframes loading {
-  to {
-    width: 69.4%;
+@-webkit-keyframes circle-flash {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-@keyframes loading {
-  to {
-    width: 69.4%;
+@keyframes circle-flash {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
   }
 }
 
-.rect {
-  border: 3px solid black;
-  width: 70%;
-  height: 3em;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+.myname {
   position: absolute;
+  right: 20vw;
+  text-align: left;
+  font-size: 20vh;
+  opacity: 0;
+  color: white;
+  -webkit-animation: nameFadeOut 3s ease-in-out infinite;
+          animation: nameFadeOut 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes nameFadeOut {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@keyframes nameFadeOut {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
 }
 /*# sourceMappingURL=style.css.map */
