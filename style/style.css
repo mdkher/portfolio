@@ -72,7 +72,8 @@ body {
   position: absolute;
 }
 
-#my-img {
+#my-img,
+object {
   top: 10%;
   left: 73%;
   width: 23%;

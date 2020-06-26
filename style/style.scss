@@ -17,7 +17,7 @@ body {
   overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-    animation: fade-in 2s 3s ease-in-out forwards;
+  animation: fade-in 2s 3s ease-in-out forwards;
 }
 .container {
   width: 100%;
@@ -63,7 +63,8 @@ body {
   position: absolute;
 }
 
-#my-img {
+#my-img,
+object {
   top: 10%;
   left: 73%;
   width: 23%;
@@ -163,9 +164,9 @@ body {
 }
 
 #go-home {
-    position: absolute;
-    right: 0;
-    top: 95vh;
+  position: absolute;
+  right: 0;
+  top: 95vh;
 }
 
 #go-home a {
@@ -180,15 +181,15 @@ body {
 }
 
 #go-home a:hover {
-    animation: hover-home 0.5s ease-in forwards;
+  animation: hover-home 0.5s ease-in forwards;
 }
 
 @keyframes hover-home {
-    to {
-        border: 3px solid black;  
-        // background-color: rgba(92, 92, 92, 0.459);
-        // color: white;
-    }
+  to {
+    border: 3px solid black;
+    // background-color: rgba(92, 92, 92, 0.459);
+    // color: white;
+  }
 }
 
 .navigation-tab {
