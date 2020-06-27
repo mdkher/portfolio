@@ -227,7 +227,7 @@ body {
 
 @-webkit-keyframes listFadeIn {
   to {
-    opacity: 0.5;
+    opacity: 0.6;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
@@ -235,7 +235,7 @@ body {
 
 @keyframes listFadeIn {
   to {
-    opacity: 0.5;
+    opacity: 0.6;
     -webkit-transform: translateY(0px);
             transform: translateY(0px);
   }
@@ -384,13 +384,14 @@ object {
 
 .about-me-info .name,
 .location {
-  font-size: 2.5em;
+  font-size: 4.5vh;
   opacity: 0.8;
-  margin: 0.2em 0em;
+  margin: 0.5vh 0vh;
+  font-weight: lighter;
 }
 
 .about-me-info .post {
-  font-size: 3em;
+  font-size: 4vh;
   font-weight: bold;
   opacity: 0.8;
 }
@@ -399,25 +400,30 @@ object {
 .work-list-item,
 .resume,
 .coffee {
-  font-size: 1em;
+  font-size: 2vh;
   opacity: 0.8;
-  margin-top: 1em;
+  margin-top: 1.5vh;
+}
+
+.about-me-info .resume,
+.coffee {
+  font-size: 1.8vh;
 }
 
 .about-me-info .description {
-  line-height: 1.5em;
+  line-height: 2.4vh;
 }
 
 .about-me-info .work-list {
-  font-size: 2em;
+  font-size: 3.5vh;
   opacity: 0.8;
-  margin: 0.5em 0em;
+  margin: 2vh 0vh;
 }
 
 .about-me-info .know-me {
-  font-size: 2em;
+  font-size: 3vh;
   opacity: 0.8;
-  margin-top: 2.5em;
+  margin-top: 5vh;
 }
 
 .about-me-info .resume a {
