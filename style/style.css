@@ -10,6 +10,145 @@ body {
   overflow: hidden;
 }
 
+#landing-page {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: 5;
+  background-color: black;
+  -webkit-animation: fade-out 0.2s 3s ease-out forwards;
+          animation: fade-out 0.2s 3s ease-out forwards;
+}
+
+.flashing-circle {
+  position: absolute;
+  top: 3vh;
+  left: 3vw;
+  height: 20vh;
+  width: 20vh;
+  background-color: white;
+  border-radius: 50%;
+  color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  opacity: 1;
+  font-size: x-large;
+  -webkit-animation: circle-flash 1.5s ease-in-out infinite;
+          animation: circle-flash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes circle-flash {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes circle-flash {
+  0% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.myname {
+  position: absolute;
+  right: 15vw;
+  text-align: left;
+  font-size: 20vh;
+  opacity: 0;
+  color: white;
+  -webkit-animation: nameFadeOut 3s ease-in-out infinite;
+          animation: nameFadeOut 3s ease-in-out infinite;
+}
+
+@-webkit-keyframes nameFadeOut {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@keyframes nameFadeOut {
+  0% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+  }
+  30% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  80% {
+    opacity: 1;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-50px);
+            transform: translateX(-50px);
+  }
+}
+
+@-webkit-keyframes fade-out {
+  to {
+    opacity: 0;
+    display: none;
+    z-index: -10;
+  }
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+    display: none;
+    z-index: -10;
+  }
+}
+
 #main-page {
   position: relative;
   opacity: 0;
@@ -47,11 +186,12 @@ body {
 
 #main-page-name {
   position: absolute;
-  right: 45vw;
+  left: 10vw;
   text-align: left;
   font-size: 20vh;
   opacity: 0;
   color: black;
+  letter-spacing: -5px;
   -webkit-animation: nameFadeIn 1s 2.7s ease forwards;
           animation: nameFadeIn 1s 2.7s ease forwards;
 }
@@ -59,32 +199,26 @@ body {
 @-webkit-keyframes nameFadeIn {
   to {
     opacity: 0.5;
-    right: 55vw;
+    left: 3vw;
   }
 }
 
 @keyframes nameFadeIn {
   to {
     opacity: 0.5;
-    right: 55vw;
+    left: 3vw;
   }
 }
 
 #main-page-description {
   font-size: 2.25vw;
   color: black;
-  top: 50vh;
-  left: 4.4vw;
+  top: 62vh;
+  left: 4vw;
+  width: 50vw;
   position: absolute;
   z-index: -1;
-  opacity: 1;
-}
-
-#main-page-description li {
-  list-style: none;
-  margin: 1em 0em;
   opacity: 0;
-  color: black;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
   -webkit-animation: listFadeIn 1s 3.7s ease-in-out forwards;
@@ -130,16 +264,28 @@ object {
   position: absolute;
   width: 150px;
   height: 80px;
-  opacity: 0.4;
   top: 90%;
   left: 27%;
   z-index: 3;
+  opacity: 0;
   cursor: pointer;
-  -webkit-animation: move-up-down 2s ease-in-out infinite;
-          animation: move-up-down 2s ease-in-out infinite;
+  -webkit-animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease-in-out infinite;
+          animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease-in-out infinite;
   background-image: url("../images/arrow.png");
   background-position: center;
   background-repeat: no-repeat;
+}
+
+@-webkit-keyframes fadeInMove {
+  to {
+    opacity: 0.4;
+  }
+}
+
+@keyframes fadeInMove {
+  to {
+    opacity: 0.4;
+  }
 }
 
 @-webkit-keyframes move-up-down {
@@ -228,11 +374,62 @@ object {
 
 .about-me-info {
   position: absolute;
-  top: 40vh;
-  left: 30vw;
-  width: 65vw;
+  top: 30vh;
+  left: 60vw;
+  width: 30vw;
   height: 40vh;
-  border: 2px solid black;
+  color: black;
+  border-top: 2px solid black;
+}
+
+.about-me-info .name,
+.location {
+  font-size: 2.5em;
+  opacity: 0.8;
+  margin: 0.2em 0em;
+}
+
+.about-me-info .post {
+  font-size: 3em;
+  font-weight: bold;
+  opacity: 0.8;
+}
+
+.about-me-info .description,
+.work-list-item,
+.resume,
+.coffee {
+  font-size: 1em;
+  opacity: 0.8;
+  margin-top: 1em;
+}
+
+.about-me-info .description {
+  line-height: 1.5em;
+}
+
+.about-me-info .work-list {
+  font-size: 2em;
+  opacity: 0.8;
+  margin: 0.5em 0em;
+}
+
+.about-me-info .know-me {
+  font-size: 2em;
+  opacity: 0.8;
+  margin-top: 2.5em;
+}
+
+.about-me-info .resume a {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
+}
+
+.about-me-info .coffee a {
+  text-decoration: underline;
+  color: black;
+  font-weight: bold;
 }
 
 .qualifications h1 {
@@ -339,145 +536,6 @@ object {
 @keyframes hover-nav-element {
   to {
     border-bottom: 3px solid black;
-  }
-}
-
-#landing-page {
-  height: 100vh;
-  width: 100%;
-  position: fixed;
-  z-index: 5;
-  background-color: black;
-  -webkit-animation: fade-out 0.2s 3s ease-out forwards;
-          animation: fade-out 0.2s 3s ease-out forwards;
-}
-
-@-webkit-keyframes fade-out {
-  to {
-    opacity: 0;
-    display: none;
-    z-index: -10;
-  }
-}
-
-@keyframes fade-out {
-  to {
-    opacity: 0;
-    display: none;
-    z-index: -10;
-  }
-}
-
-.flashing-circle {
-  position: absolute;
-  top: 3vh;
-  left: 3vw;
-  height: 20vh;
-  width: 20vh;
-  background-color: white;
-  border-radius: 50%;
-  color: black;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  opacity: 1;
-  font-size: x-large;
-  -webkit-animation: circle-flash 1.5s ease-in-out infinite;
-          animation: circle-flash 1.5s ease-in-out infinite;
-}
-
-@-webkit-keyframes circle-flash {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-@keyframes circle-flash {
-  0% {
-    opacity: 1;
-  }
-  40% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
-  }
-  60% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-.myname {
-  position: absolute;
-  right: 20vw;
-  text-align: left;
-  font-size: 20vh;
-  opacity: 0;
-  color: white;
-  -webkit-animation: nameFadeOut 3s ease-in-out infinite;
-          animation: nameFadeOut 3s ease-in-out infinite;
-}
-
-@-webkit-keyframes nameFadeOut {
-  0% {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
-  }
-  30% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  80% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
-  }
-}
-
-@keyframes nameFadeOut {
-  0% {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
-  }
-  30% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  80% {
-    opacity: 1;
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-  100% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
   }
 }
 /*# sourceMappingURL=style.css.map */
