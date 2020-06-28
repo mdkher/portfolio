@@ -330,9 +330,13 @@ object {
 .projects,
 .contact-me,
 .trial {
+  opacity: 0;
   height: 100vh;
   width: 100%;
   scroll-snap-align: center;
+}
+
+.gradient-animation {
   background: linear-gradient(-45deg, #ee765246, #e73c7e46, #23a6d546, #23d5ab46);
   background-size: 400% 400%;
   -webkit-animation: gradient 15s ease infinite;
@@ -561,6 +565,12 @@ object {
 
 .animation-element.slide-left.in-view {
   opacity: 1;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+  transform: translate3d(0px, 0px, 0px);
+}
+
+.animation-element.slide-left.in-view-05 {
+  opacity: 0.5;
   -webkit-transform: translate3d(0px, 0px, 0px);
   transform: translate3d(0px, 0px, 0px);
 }

@@ -1,16 +1,81 @@
-
-var observer = new IntersectionObserver(function(entries) {
-	// isIntersecting is true when element and viewport are overlapping
-	// isIntersecting is false when element and viewport don't overlap
-    let slideClass = document.querySelector("#trial");
-    if(entries[0].isIntersecting === true){
-        console.log('Element has just become visible in screen');
-        slideClass.classList.add('in-view')
+var aboutMe = new IntersectionObserver(
+  function (entries) {
+    let slideClass = document.querySelector("#about-me");
+    // console.log(entries);
+    if (entries[0].isIntersecting === true) {
+      slideClass.classList.add("in-view");
+      slideClass.classList.add("gradient-animation");
+      setTimeout(function () {
+        document.querySelector("#about-me h1").classList.add("in-view-05");
+      }, 500);
     } else {
-        console.log('Element has just become invisible in screen');
-        slideClass.classList.remove('in-view')
+      slideClass.classList.remove("in-view");
+    //   slideClass.classList.remove("gradient-animation");
+      document.querySelector("#about-me h1").classList.remove("in-view-05");
     }
-		
-}, { threshold: [0] });
+  },
+  { threshold: [0] }
+);
+var qualifications = new IntersectionObserver(
+  function (entries) {
+    let slideClass = document.querySelector("#qualifications");
+    // console.log(entries);
+    if (entries[0].isIntersecting === true) {
+      slideClass.classList.add("in-view");
+      slideClass.classList.add("gradient-animation");
+      setTimeout(function () {
+        document
+          .querySelector("#qualifications h1")
+          .classList.add("in-view-05");
+      }, 500);
+    } else {
+      slideClass.classList.remove("in-view");
+    //   slideClass.classList.remove("gradient-animation");
+      document
+        .querySelector("#qualifications h1")
+        .classList.remove("in-view-05");
+    }
+  },
+  { threshold: [0] }
+);
+var projects = new IntersectionObserver(
+  function (entries) {
+    let slideClass = document.querySelector("#projects");
+    // console.log(entries);
+    if (entries[0].isIntersecting === true) {
+      slideClass.classList.add("in-view");
+      slideClass.classList.add("gradient-animation");
+      setTimeout(function () {
+        document.querySelector("#projects h1").classList.add("in-view-05");
+      }, 500);
+    } else {
+      slideClass.classList.remove("in-view");
+    //   slideClass.classList.remove("gradient-animation");
+      document.querySelector("#projects h1").classList.remove("in-view-05");
+    }
+  },
+  { threshold: [0] }
+);
+var contactMe = new IntersectionObserver(
+  function (entries) {
+    let slideClass = document.querySelector("#contact-me");
+    // console.log(entries);
+    if (entries[0].isIntersecting === true) {
+      slideClass.classList.add("in-view");
+      slideClass.classList.add("gradient-animation");
+      setTimeout(function () {
+        document.querySelector("#contact-me h1").classList.add("in-view-05");
+      }, 500);
+    } else {
+      slideClass.classList.remove("in-view");
+    //   slideClass.classList.remove("gradient-animation");
+      document.querySelector("#contact-me h1").classList.remove("in-view-05");
+    }
+  },
+  { threshold: [0] }
+);
 
-observer.observe(document.querySelector("#trial"));
+aboutMe.observe(document.querySelector("#about-me"));
+qualifications.observe(document.querySelector("#qualifications"));
+projects.observe(document.querySelector("#projects"));
+contactMe.observe(document.querySelector("#contact-me"));
