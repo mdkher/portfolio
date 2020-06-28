@@ -262,10 +262,10 @@ object {
 
 #scroll-down {
   position: absolute;
-  width: 150px;
-  height: 80px;
-  top: 90%;
-  left: 27%;
+  width: 5vw;
+  height: 5vh;
+  top: 90vh;
+  left: 27vw;
   z-index: 3;
   opacity: 0;
   cursor: pointer;
@@ -278,43 +278,37 @@ object {
 
 @-webkit-keyframes fadeInMove {
   to {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 
 @keyframes fadeInMove {
   to {
-    opacity: 0.4;
+    opacity: 0.3;
   }
 }
 
 @-webkit-keyframes move-up-down {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    top: 90vh;
   }
   50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    top: 89vh;
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    top: 90vh;
   }
 }
 
 @keyframes move-up-down {
   0% {
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
+    top: 90vh;
   }
   50% {
-    -webkit-transform: translateY(-10px);
-            transform: translateY(-10px);
+    top: 89vh;
   }
   100% {
-    -webkit-transform: translateY(0px);
-            transform: translateY(0px);
+    top: 90vh;
   }
 }
 
