@@ -60,7 +60,7 @@ body {
   font-size: 20vh;
   opacity: 0;
   color: white;
-  animation: nameFadeOut 3s ease-in-out infinite;
+  animation: nameFadeOut 3.2s ease forwards;
 }
 
 @keyframes nameFadeOut {
@@ -76,7 +76,7 @@ body {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50px);
+    transform: translateX(-100px);
   }
 }
 
@@ -96,7 +96,7 @@ body {
   overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
-  animation: fade-in 1s 3s ease-in-out forwards;
+  animation: fade-in 1s 3s ease forwards;
 }
 .container {
   width: 100%;
@@ -144,7 +144,7 @@ body {
   z-index: -1;
   opacity: 0;
   transform: translateY(50px);
-  animation: listFadeIn 1s 3.7s ease-in-out forwards;
+  animation: listFadeIn 1s 3.7s ease forwards;
 }
 
 // #main-page-description li {
@@ -189,7 +189,7 @@ object {
   opacity: 0;
   cursor: pointer;
   animation: fadeInMove 2s 5s ease forwards,
-    move-up-down 2s ease-in-out infinite;
+    move-up-down 2s ease infinite;
   background-image: url("../images/arrow.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -370,12 +370,12 @@ object {
 }
 
 #go-home a:hover {
-  animation: hover-home 0.5s ease-in forwards;
+  animation: hover-home 0.5s ease forwards;
 }
 
 @keyframes hover-home {
   to {
-    border: 3px solid black;
+    border: 2px solid black;
     // background-color: rgba(92, 92, 92, 0.459);
     // color: white;
   }

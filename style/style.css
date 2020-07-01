@@ -87,8 +87,8 @@ body {
   font-size: 20vh;
   opacity: 0;
   color: white;
-  -webkit-animation: nameFadeOut 3s ease-in-out infinite;
-          animation: nameFadeOut 3s ease-in-out infinite;
+  -webkit-animation: nameFadeOut 3.2s ease forwards;
+          animation: nameFadeOut 3.2s ease forwards;
 }
 
 @-webkit-keyframes nameFadeOut {
@@ -107,8 +107,8 @@ body {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
   }
 }
 
@@ -128,8 +128,8 @@ body {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-50px);
-            transform: translateX(-50px);
+    -webkit-transform: translateX(-100px);
+            transform: translateX(-100px);
   }
 }
 
@@ -158,8 +158,8 @@ body {
   scroll-behavior: smooth;
   -ms-scroll-snap-type: y mandatory;
       scroll-snap-type: y mandatory;
-  -webkit-animation: fade-in 1s 3s ease-in-out forwards;
-          animation: fade-in 1s 3s ease-in-out forwards;
+  -webkit-animation: fade-in 1s 3s ease forwards;
+          animation: fade-in 1s 3s ease forwards;
 }
 
 .container {
@@ -221,8 +221,8 @@ body {
   opacity: 0;
   -webkit-transform: translateY(50px);
           transform: translateY(50px);
-  -webkit-animation: listFadeIn 1s 3.7s ease-in-out forwards;
-          animation: listFadeIn 1s 3.7s ease-in-out forwards;
+  -webkit-animation: listFadeIn 1s 3.7s ease forwards;
+          animation: listFadeIn 1s 3.7s ease forwards;
 }
 
 @-webkit-keyframes listFadeIn {
@@ -269,8 +269,8 @@ object {
   z-index: 3;
   opacity: 0;
   cursor: pointer;
-  -webkit-animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease-in-out infinite;
-          animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease-in-out infinite;
+  -webkit-animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease infinite;
+          animation: fadeInMove 2s 5s ease forwards, move-up-down 2s ease infinite;
   background-image: url("../images/arrow.png");
   background-position: center;
   background-repeat: no-repeat;
@@ -485,19 +485,19 @@ object {
 }
 
 #go-home a:hover {
-  -webkit-animation: hover-home 0.5s ease-in forwards;
-          animation: hover-home 0.5s ease-in forwards;
+  -webkit-animation: hover-home 0.5s ease forwards;
+          animation: hover-home 0.5s ease forwards;
 }
 
 @-webkit-keyframes hover-home {
   to {
-    border: 3px solid black;
+    border: 2px solid black;
   }
 }
 
 @keyframes hover-home {
   to {
-    border: 3px solid black;
+    border: 2px solid black;
   }
 }
 
